@@ -1,11 +1,33 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <AppHeader />
+    <Intro />
+    <Features />
+    <AppWrapper />
+    <AppFooter />
+    <router-view />
   </div>
-  <router-view/>
 </template>
 
+<script>
+// @ is an alias to /src
+import AppHeader from "@/components/global/AppHeader.vue";
+import Intro from "@/components/Intro.vue";
+import Features from "@/components/Features.vue";
+import AppWrapper from "@/components/apps/AppWrapper.vue";
+import AppFooter from "@/components/global/AppFooter.vue";
+
+export default {
+  name: "app",
+  components: {
+    AppHeader,
+    Intro,
+    Features,
+    AppWrapper,
+    AppFooter,
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
